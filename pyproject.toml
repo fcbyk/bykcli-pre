@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bykcli-pre"
+version = "0.3.0"
+description = "Preview plugin for bykcli, experimental commands for trial."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "fcbyk", email = "731240932@qq.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "bykcli==1.0.0a1",
+    "openai>=1.0.0",
+    "click>=8.0.0",
+    "rich>=13.0.0",
+]
+
+[project.entry-points."bykcli.plugins"]
+bykcli-pre = "bykclipre.main:register"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = { find = { where = ["src"], include = ["bykclipre*","bykclipreai"] } }
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.3.0"
+tag_format = "v$version"
+changelog_file = "CHANGELOG.md"
+bump_message = "release: v$new_version"
+version_files = [
+    "pyproject.toml:version ="
+]
