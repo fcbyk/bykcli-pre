@@ -30,6 +30,9 @@ dependencies = [
     "flask>=2.0",
     "pyperclip>=1.9.0,<2.0.0",
     "waitress>=2.0.0",
+    "flask-socketio==5.3.3",
+    "python-socketio==5.9.0",
+    "pyautogui>=0.9.50,<1.0.0"
 ]
 
 [project.entry-points."bykcli.plugins"]
@@ -37,7 +40,7 @@ bykcli-pre = "bykclipre.main:register"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-packages = { find = { where = ["src"], include = ["bykclipre*","bykclipreai"] } }
+packages = { find = { where = ["src"], include = ["bykclipre*","bykclipreai","bykclipreedu"] } }
 
 [tool.setuptools.package-data]
 bykclipre = ["web/dist/**/*"]

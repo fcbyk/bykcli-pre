@@ -12,6 +12,8 @@
     "@fontsource/space-mono": "^5.2.9",
     "@fontsource/syncopate": "^5.2.8",
     "@highlightjs/vue-plugin": "^2.1.0",
+    "socket.io-client": "^4.5.4",
+    "qrcode": "^1.5.4",
     "highlight.js": "^11.11.1",
     "lucide-vue-next": "^0.562.0",
     "vue": "^3.4.0",
