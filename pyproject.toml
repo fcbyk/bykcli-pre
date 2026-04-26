@@ -27,6 +27,9 @@ dependencies = [
     "openai>=1.0.0",
     "click>=8.0.0",
     "rich>=13.0.0",
+    "flask>=2.0",
+    "pyperclip>=1.9.0,<2.0.0",
+    "waitress>=2.0.0",
 ]
 
 [project.entry-points."bykcli.plugins"]
@@ -35,6 +38,9 @@ bykcli-pre = "bykclipre.main:register"
 [tool.setuptools]
 package-dir = {"" = "src"}
 packages = { find = { where = ["src"], include = ["bykclipre*","bykclipreai"] } }
+
+[tool.setuptools.package-data]
+bykclipre = ["web/dist/**/*"]
 
 [tool.commitizen]
 name = "cz_conventional_commits"
